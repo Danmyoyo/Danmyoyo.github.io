@@ -1,50 +1,195 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Dancan's Portfolio</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        h1, h2 { color: #2c3e50; }
-        a { color: #2980b9; text-decoration: none; }
-        section { margin-bottom: 40px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dancan Myoyo | FinTech Software Developer</title>
+<meta name="description" content="Software developer at Bizen Limited building FinTech backends, AML screening integrations and data analytics.">
+<meta name="theme-color" content="#0f1f33">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3f6f8; --surface:#ffffff; --ink:#0f1f33; --muted:#52627a; --line:#d5dde6;
+  --teal:#0b8f80; --teal-ink:#ffffff; --amber:#b87503; --amber-bg:#fff4dc; --clear-bg:#dff5f1;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0c1726; --surface:#12233a; --ink:#e9eff6; --muted:#9db0c7; --line:#243a57;
+    --teal:#3dd3bf; --teal-ink:#06231f; --amber:#f2b441; --amber-bg:#3a2e12; --clear-bg:#103a38;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0c1726; --surface:#12233a; --ink:#e9eff6; --muted:#9db0c7; --line:#243a57;
+  --teal:#3dd3bf; --teal-ink:#06231f; --amber:#f2b441; --amber-bg:#3a2e12; --clear-bg:#103a38;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 "Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;line-height:1.1;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+
+/* nav */
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:4rem}
+.brand{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;text-decoration:none;font-size:1.15rem}
+nav ul{display:flex;gap:1.5rem;list-style:none;padding:0;align-items:center}
+nav ul a{text-decoration:none;color:var(--muted);font-weight:600;font-size:.98rem}
+nav ul a:hover{color:var(--ink)}
+#theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:.3rem .8rem;font:600 .9rem "Source Sans 3",sans-serif;cursor:pointer}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center;padding:5rem 0 4rem}
+.hero h1{font-size:clamp(2.5rem,6vw,4.4rem);font-weight:700}
+.hero p.lead{margin-top:1.4rem;font-size:1.25rem;color:var(--muted);max-width:34rem}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.btn{display:inline-block;padding:.75rem 1.4rem;border-radius:.6rem;font-weight:600;text-decoration:none;border:1.5px solid var(--ink)}
+.btn.primary{background:var(--teal);border-color:var(--teal);color:var(--teal-ink)}
+.btn:hover{transform:translateY(-2px)}
+.btn{transition:transform .15s}
+
+/* screening card: the one memorable element */
+.screen{background:var(--surface);border:1px solid var(--line);border-radius:1rem;padding:1.4rem;box-shadow:0 20px 50px -25px rgba(15,31,51,.45)}
+.screen h2{font-size:1rem;color:var(--muted);font-weight:500;margin-bottom:1rem}
+.row{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.8rem 0;border-top:1px solid var(--line)}
+.row:first-of-type{border-top:0}
+.row b{font-weight:600}
+.row small{display:block;color:var(--muted);font-size:.9rem}
+.tag{font-weight:600;font-size:.88rem;padding:.25rem .7rem;border-radius:999px;white-space:nowrap}
+.tag.clear{background:var(--clear-bg);color:var(--teal)}
+.tag.review{background:var(--amber-bg);color:var(--amber)}
+.tag.pending{background:var(--line);color:var(--muted)}
+.screen .note{margin-top:1rem;font-size:.88rem;color:var(--muted)}
+
+/* sections */
+section{padding:4rem 0;border-top:1px solid var(--line)}
+section>.wrap>h2{font-size:clamp(1.8rem,3.5vw,2.5rem);margin-bottom:2rem}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.about p{max-width:36rem}
+.about p+p{margin-top:1rem}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:2.5rem 2rem}
+.skills h3{font-size:1.15rem;margin-bottom:.7rem}
+.skills ul{list-style:none;padding:0;color:var(--muted)}
+.skills li{padding:.25rem 0}
+.project{display:flex;justify-content:space-between;align-items:center;gap:1.5rem;background:var(--surface);border:1px solid var(--line);border-radius:1rem;padding:1.6rem;text-decoration:none}
+.project:hover{border-color:var(--teal)}
+.project h3{font-size:1.4rem}
+.project p{color:var(--muted);margin-top:.4rem}
+.certs{display:grid;gap:1rem}
+.cert{background:var(--surface);border:1px solid var(--line);border-radius:1rem;padding:1.2rem 1.6rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.cert span{color:var(--muted)}
+.contact p{max-width:34rem;color:var(--muted)}
+.links{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
+footer{padding:2.5rem 0;color:var(--muted);font-size:.95rem;border-top:1px solid var(--line)}
+
+@media (max-width:820px){
+  .hero,.about{grid-template-columns:1fr;gap:2rem}
+  .hero{padding-top:3rem}
+  nav ul li:not(:last-child){display:none}
+  .project{flex-direction:column;align-items:flex-start}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
 </head>
 <body>
-    <h1>Otieno Dancan – IT & FinTech Expert</h1>
-    
-    <section>
-        <h2>About Me</h2>
-        <p>Software Developer at Bizen Limited, specializing in FinTech solutions, backend systems, and data analytics.</p>
-    </section>
+<header>
+  <nav class="wrap" aria-label="Main">
+    <a class="brand" href="#top">Dancan Myoyo</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><button id="theme" type="button" aria-label="Switch colour theme">Theme</button></li>
+    </ul>
+  </nav>
+</header>
 
-    <section>
-        <h2>Skills</h2>
-        <ul>
-            <li>Java & Spring Boot</li>
-            <li>SQL & Database Debugging</li>
-            <li>Power BI & Data Analytics</li>
-            <li>FinTech Compliance & AML Integration</li>
-        </ul>
-    </section>
+<main id="top">
+  <div class="wrap hero">
+    <div>
+      <h1>I build the backend systems that keep financial transactions safe.</h1>
+      <p class="lead">Software developer at Bizen Limited, working on FinTech platforms, AML screening integrations and the data behind them.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">See my work</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <aside class="screen" aria-label="Example of a customer screening queue">
+      <h2>Customer screening queue</h2>
+      <div id="queue">
+        <div class="row"><div><b>Customer 00481</b><small>Sanctions and PEP check</small></div><span class="tag clear">Clear</span></div>
+        <div class="row"><div><b>Customer 00482</b><small>Sanctions and PEP check</small></div><span class="tag review">Needs review</span></div>
+        <div class="row"><div><b>Customer 00483</b><small>Sanctions and PEP check</small></div><span class="tag pending" id="live">Screening</span></div>
+      </div>
+      <p class="note">Sample data. This is the kind of workflow I integrate and support.</p>
+    </aside>
+  </div>
 
-    <section>
-        <h2>Projects</h2>
+  <section id="about"><div class="wrap">
+    <h2>About</h2>
+    <div class="about">
+      <p>I'm a software developer at Bizen Limited. My work sits where code meets compliance: backend services, database debugging and the integrations that connect financial products to AML and screening tools.</p>
+      <p>I also turn operational data into dashboards with Power BI, so teams can see what is happening and act on it.</p>
+    </div>
+  </div></section>
 
-        <p><a href="https://github.com/Sitina-Celine/TSS">TSS Project</a></p>
-    </section>
+  <section id="skills"><div class="wrap">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div><h3>Backend</h3><ul><li>Java</li><li>Spring Boot</li><li>REST APIs</li></ul></div>
+      <div><h3>Data</h3><ul><li>SQL</li><li>Database debugging</li><li>Power BI and analytics</li></ul></div>
+      <div><h3>FinTech and compliance</h3><ul><li>AML integration</li><li>Customer screening</li><li>KYC workflows</li></ul></div>
+    </div>
+  </div></section>
 
-    <section>
-        <h2>Certifications</h2>
-        <p><a href="https://tinyurl.com/534wvf6e">View My Certifications</a></p>
-    </section>
+  <section id="projects"><div class="wrap">
+    <h2>Projects</h2>
+    <a class="project" href="https://github.com/Sitina-Celine/TSS" target="_blank" rel="noopener">
+      <div><h3>TSS Project</h3><p>View the source code and details on GitHub.</p></div>
+      <span class="btn">Open on GitHub</span>
+    </a>
+  </div></section>
 
-    <section>
-        <h2>Contact</h2>
-        <p>Email: your.email@example.com</p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a></p>
-       
-    </section>
+  <section id="certifications"><div class="wrap">
+    <h2>Certifications</h2>
+    <div class="certs">
+      <div class="cert"><b>World-Check One Administrators Certification Assessment</b><span>LSEG, October 2026</span></div>
+      <div class="cert"><b>More certifications</b><a href="https://tinyurl.com/534wvf6e" target="_blank" rel="noopener">View the full list</a></div>
+    </div>
+  </div></section>
+
+  <section id="contact" class="contact"><div class="wrap">
+    <h2>Contact</h2>
+    <p>Open to FinTech, compliance technology and data roles. Send me a message and I'll reply.</p>
+    <div class="links">
+      <a class="btn primary" href="mailto:your.email@example.com">Email me</a>
+      <a class="btn" href="https://linkedin.com/in/dancan-myoyo" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/Dannmyoyo" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div></section>
+</main>
+
+<footer><div class="wrap">&copy; <span id="yr">2026</span> Dancan Myoyo. Nairobi, Kenya.</div></footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+const root=document.documentElement,btn=document.getElementById('theme');
+try{const s=localStorage.getItem('theme');if(s)root.dataset.theme=s}catch(e){}
+btn.addEventListener('click',()=>{
+  const dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme=dark?'light':'dark';
+  try{localStorage.setItem('theme',root.dataset.theme)}catch(e){}
+});
+/* screening card: the last row resolves once, on load */
+const live=document.getElementById('live');
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  setTimeout(()=>{live.className='tag clear';live.textContent='Clear'},2200);
+}else{live.className='tag clear';live.textContent='Clear'}
+</script>
 </body>
 </html>
