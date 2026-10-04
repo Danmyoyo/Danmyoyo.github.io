@@ -1,195 +1,221 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dancan Myoyo | FinTech Software Developer</title>
-<meta name="description" content="Software developer at Bizen Limited building FinTech backends, AML screening integrations and data analytics.">
-<meta name="theme-color" content="#0f1f33">
+<meta name="description" content="Otieno Dancan Myoyo, FinTech software developer in Nairobi building secure payment systems, transaction screening APIs and Power BI dashboards.">
+<meta name="theme-color" content="#070b14">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#f3f6f8; --surface:#ffffff; --ink:#0f1f33; --muted:#52627a; --line:#d5dde6;
-  --teal:#0b8f80; --teal-ink:#ffffff; --amber:#b87503; --amber-bg:#fff4dc; --clear-bg:#dff5f1;
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --bg:#0c1726; --surface:#12233a; --ink:#e9eff6; --muted:#9db0c7; --line:#243a57;
-    --teal:#3dd3bf; --teal-ink:#06231f; --amber:#f2b441; --amber-bg:#3a2e12; --clear-bg:#103a38;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#0c1726; --surface:#12233a; --ink:#e9eff6; --muted:#9db0c7; --line:#243a57;
-  --teal:#3dd3bf; --teal-ink:#06231f; --amber:#f2b441; --amber-bg:#3a2e12; --clear-bg:#103a38;
-}
+:root{--bg:#070b14;--bg2:#0d1424;--card:#111a2e;--ink:#e8eefc;--mute:#93a3c4;--line:#1f2d4a;--a:#22d3ee;--b:#8b5cf6;--ok:#4ade80;--grid:rgba(34,211,238,.07)}
+:root[data-theme="light"]{--bg:#f4f7fc;--bg2:#e9eff9;--card:#fff;--ink:#0b1630;--mute:#51618a;--line:#d3ddf0;--a:#0a7ea4;--b:#6d3fe0;--ok:#168a45;--grid:rgba(10,126,164,.08)}
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;scroll-padding-top:5rem}
-body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 "Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif}
-h1,h2,h3{font-family:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;line-height:1.1;letter-spacing:-.02em}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:4px}
-.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
-
-/* nav */
-header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav{display:flex;align-items:center;justify-content:space-between;height:4rem}
-.brand{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;text-decoration:none;font-size:1.15rem}
-nav ul{display:flex;gap:1.5rem;list-style:none;padding:0;align-items:center}
-nav ul a{text-decoration:none;color:var(--muted);font-weight:600;font-size:.98rem}
-nav ul a:hover{color:var(--ink)}
-#theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:.3rem .8rem;font:600 .9rem "Source Sans 3",sans-serif;cursor:pointer}
-
-/* hero */
-.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center;padding:5rem 0 4rem}
-.hero h1{font-size:clamp(2.5rem,6vw,4.4rem);font-weight:700}
-.hero p.lead{margin-top:1.4rem;font-size:1.25rem;color:var(--muted);max-width:34rem}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{background:var(--bg);color:var(--ink);font:400 1.02rem/1.7 Sora,system-ui,"Segoe UI",sans-serif;overflow-x:hidden;
+background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:44px 44px}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(600px 400px at 85% 5%,rgba(139,92,246,.22),transparent),radial-gradient(500px 400px at 5% 30%,rgba(34,211,238,.14),transparent)}
+a{color:inherit}h1,h2,h3{line-height:1.15;letter-spacing:-.02em}
+.mono{font-family:"JetBrains Mono",ui-monospace,Consolas,monospace}
+:focus-visible{outline:3px solid var(--a);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1100px,100% - 2.5rem);margin-inline:auto}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--a),var(--b));z-index:30}
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:4rem;gap:1rem}
+.brand{font-weight:700;text-decoration:none}.brand span{color:var(--a)}
+nav ul{display:flex;gap:1.3rem;list-style:none;padding:0;align-items:center}
+nav ul a{text-decoration:none;color:var(--mute);font-size:.9rem;transition:color .2s}
+nav ul a:hover,nav ul a.on{color:var(--a)}
+.ib{background:none;border:1px solid var(--line);color:var(--ink);border-radius:.6rem;padding:.35rem .7rem;cursor:pointer;font:inherit;font-size:.85rem}
+#menu{display:none}
+.hero{padding:5.5rem 0 4rem;display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+.tag{display:inline-flex;gap:.5rem;align-items:center;font-size:.8rem;color:var(--ok);border:1px solid var(--line);background:var(--card);padding:.3rem .8rem;border-radius:999px}
+.tag i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 var(--ok);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px transparent}}
+.hero h1{font-size:clamp(2.2rem,5.2vw,3.7rem);margin:1.2rem 0}
+.grad{background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.cursor::after{content:"▍";color:var(--a);animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.lead{color:var(--mute);max-width:34rem}
 .cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
-.btn{display:inline-block;padding:.75rem 1.4rem;border-radius:.6rem;font-weight:600;text-decoration:none;border:1.5px solid var(--ink)}
-.btn.primary{background:var(--teal);border-color:var(--teal);color:var(--teal-ink)}
-.btn:hover{transform:translateY(-2px)}
-.btn{transition:transform .15s}
-
-/* screening card: the one memorable element */
-.screen{background:var(--surface);border:1px solid var(--line);border-radius:1rem;padding:1.4rem;box-shadow:0 20px 50px -25px rgba(15,31,51,.45)}
-.screen h2{font-size:1rem;color:var(--muted);font-weight:500;margin-bottom:1rem}
-.row{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.8rem 0;border-top:1px solid var(--line)}
-.row:first-of-type{border-top:0}
-.row b{font-weight:600}
-.row small{display:block;color:var(--muted);font-size:.9rem}
-.tag{font-weight:600;font-size:.88rem;padding:.25rem .7rem;border-radius:999px;white-space:nowrap}
-.tag.clear{background:var(--clear-bg);color:var(--teal)}
-.tag.review{background:var(--amber-bg);color:var(--amber)}
-.tag.pending{background:var(--line);color:var(--muted)}
-.screen .note{margin-top:1rem;font-size:.88rem;color:var(--muted)}
-
-/* sections */
-section{padding:4rem 0;border-top:1px solid var(--line)}
-section>.wrap>h2{font-size:clamp(1.8rem,3.5vw,2.5rem);margin-bottom:2rem}
-.about{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
-.about p{max-width:36rem}
-.about p+p{margin-top:1rem}
-.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:2.5rem 2rem}
-.skills h3{font-size:1.15rem;margin-bottom:.7rem}
-.skills ul{list-style:none;padding:0;color:var(--muted)}
-.skills li{padding:.25rem 0}
-.project{display:flex;justify-content:space-between;align-items:center;gap:1.5rem;background:var(--surface);border:1px solid var(--line);border-radius:1rem;padding:1.6rem;text-decoration:none}
-.project:hover{border-color:var(--teal)}
-.project h3{font-size:1.4rem}
-.project p{color:var(--muted);margin-top:.4rem}
+.btn{padding:.75rem 1.4rem;border-radius:.7rem;font-weight:600;font-size:.95rem;text-decoration:none;border:1px solid var(--line);background:var(--card);transition:transform .2s,box-shadow .2s}
+.btn.p{background:linear-gradient(120deg,var(--a),var(--b));border:0;color:#fff}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px -10px var(--a)}
+.term{background:#050810;border:1px solid var(--line);border-radius:1rem;box-shadow:0 30px 60px -30px rgba(34,211,238,.4);overflow:hidden;color:#cfe0ff}
+.term .top{display:flex;gap:.4rem;padding:.7rem 1rem;background:#0b1222;border-bottom:1px solid var(--line);align-items:center}
+.term .top i{width:11px;height:11px;border-radius:50%;background:#ff5f57}.term .top i:nth-child(2){background:#febc2e}.term .top i:nth-child(3){background:#28c840}
+.term .top span{margin-left:.6rem;font-size:.75rem;color:#6b7fa8}
+.term pre{padding:1.2rem;font-size:.82rem;line-height:1.9;white-space:pre-wrap;min-height:15.5rem}
+.term .c{color:#4ade80}.term .k{color:#22d3ee}.term .v{color:#c4a8ff}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;padding-bottom:4rem}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:1.3rem;text-align:center}
+.stat b{display:block;font-size:2rem;color:var(--a)}.stat span{font-size:.85rem;color:var(--mute)}
+section{padding:4.5rem 0}
+.eyebrow{font-size:.8rem;color:var(--a);margin-bottom:.6rem}
+section h2{font-size:clamp(1.7rem,3.5vw,2.4rem);margin-bottom:2.2rem}
+.about{display:grid;grid-template-columns:1.2fr .8fr;gap:2.5rem}
+.about p+p{margin-top:1rem}.about p{color:var(--mute)}
+.edu{background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:1.5rem}
+.edu small{color:var(--a)}.edu h3{margin:.4rem 0;font-size:1.05rem}.edu p{font-size:.9rem}
+.tl{position:relative;padding-left:1.8rem;border-left:2px solid var(--line);display:grid;gap:1.5rem}
+.job{position:relative;background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:1.5rem;transition:border-color .2s}
+.job:hover{border-color:var(--a)}
+.job::before{content:"";position:absolute;left:-2.35rem;top:1.7rem;width:14px;height:14px;border-radius:50%;background:var(--a);box-shadow:0 0 0 4px var(--bg)}
+.job header{all:unset;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;cursor:pointer;width:100%}
+.job h3{font-size:1.15rem}.job .co{color:var(--mute);font-size:.9rem}.job .dt{color:var(--a);font-size:.8rem}
+.job ul{margin-top:1rem;padding-left:1.1rem;color:var(--mute);font-size:.93rem;display:none}
+.job.open ul{display:block}.job li{margin:.4rem 0}
+.job button{all:unset;display:block;cursor:pointer;color:var(--a);font-size:.8rem;margin-top:.9rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:1.6rem;transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-6px);border-color:var(--b)}
+.card .ic{width:2.8rem;height:2.8rem;border-radius:.8rem;display:grid;place-items:center;background:linear-gradient(135deg,var(--a),var(--b));color:#fff;font-size:1.2rem;margin-bottom:1rem}
+.card h3{font-size:1.1rem;margin-bottom:.5rem}.card p{color:var(--mute);font-size:.92rem}
+.chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.chips button{background:var(--card);border:1px solid var(--line);color:var(--mute);padding:.4rem 1rem;border-radius:999px;cursor:pointer;font:inherit;font-size:.85rem}
+.chips button.on{background:var(--a);color:#06121c;border-color:var(--a);font-weight:600}
+.sk{display:flex;flex-wrap:wrap;gap:.6rem}
+.sk span{background:var(--card);border:1px solid var(--line);padding:.5rem 1rem;border-radius:.6rem;font-size:.88rem;transition:opacity .2s,transform .2s}
+.sk span.off{display:none}
 .certs{display:grid;gap:1rem}
-.cert{background:var(--surface);border:1px solid var(--line);border-radius:1rem;padding:1.2rem 1.6rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-.cert span{color:var(--muted)}
-.contact p{max-width:34rem;color:var(--muted)}
-.links{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
-footer{padding:2.5rem 0;color:var(--muted);font-size:.95rem;border-top:1px solid var(--line)}
-
-@media (max-width:820px){
-  .hero,.about{grid-template-columns:1fr;gap:2rem}
-  .hero{padding-top:3rem}
-  nav ul li:not(:last-child){display:none}
-  .project{flex-direction:column;align-items:flex-start}
-}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+.cert{display:flex;gap:1rem;background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:1.2rem 1.5rem;align-items:flex-start}
+.cert b{color:var(--ok);font-size:1.3rem}.cert h3{font-size:1rem}.cert p{color:var(--mute);font-size:.88rem}
+.contact{text-align:center;background:var(--card);border:1px solid var(--line);border-radius:1.4rem;padding:3.5rem 1.5rem}
+.contact p{color:var(--mute);max-width:32rem;margin:0 auto}
+.contact .cta{justify-content:center}
+footer{padding:2.5rem 0;text-align:center;color:var(--mute);font-size:.82rem}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+@media(max-width:860px){.hero,.about{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.hero{padding-top:3rem}
+#menu{display:inline-block}nav ul{display:none;position:absolute;top:4rem;left:0;right:0;flex-direction:column;background:var(--bg2);padding:1.2rem;border-bottom:1px solid var(--line)}nav ul.show{display:flex}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<header>
-  <nav class="wrap" aria-label="Main">
-    <a class="brand" href="#top">Dancan Myoyo</a>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><button id="theme" type="button" aria-label="Switch colour theme">Theme</button></li>
-    </ul>
-  </nav>
-</header>
+<div id="bar"></div>
+<header><nav class="wrap" aria-label="Main">
+  <a class="brand mono" href="#top">&lt;<span>Dancan</span>/&gt;</a>
+  <ul id="links">
+    <li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#work">What I build</a></li>
+    <li><a href="#skills">Skills</a></li><li><a href="#training">Training</a></li><li><a href="#contact">Contact</a></li>
+  </ul>
+  <span><button class="ib" id="theme" type="button" aria-label="Switch theme">☀ / ☾</button> <button class="ib" id="menu" type="button" aria-label="Menu" aria-expanded="false">☰</button></span>
+</nav></header>
 
 <main id="top">
-  <div class="wrap hero">
-    <div>
-      <h1>I build the backend systems that keep financial transactions safe.</h1>
-      <p class="lead">Software developer at Bizen Limited, working on FinTech platforms, AML screening integrations and the data behind them.</p>
-      <div class="cta">
-        <a class="btn primary" href="#projects">See my work</a>
-        <a class="btn" href="#contact">Get in touch</a>
-      </div>
-    </div>
-    <aside class="screen" aria-label="Example of a customer screening queue">
-      <h2>Customer screening queue</h2>
-      <div id="queue">
-        <div class="row"><div><b>Customer 00481</b><small>Sanctions and PEP check</small></div><span class="tag clear">Clear</span></div>
-        <div class="row"><div><b>Customer 00482</b><small>Sanctions and PEP check</small></div><span class="tag review">Needs review</span></div>
-        <div class="row"><div><b>Customer 00483</b><small>Sanctions and PEP check</small></div><span class="tag pending" id="live">Screening</span></div>
-      </div>
-      <p class="note">Sample data. This is the kind of workflow I integrate and support.</p>
-    </aside>
+<div class="wrap hero">
+  <div>
+    <span class="tag mono"><i></i> Open to FinTech and data roles</span>
+    <h1>I build <span class="grad cursor" id="type"></span></h1>
+    <p class="lead">Otieno Dancan Myoyo. Software developer at Bizen Limited in Nairobi, creating secure, scalable systems for payments, transaction screening and financial data.</p>
+    <div class="cta"><a class="btn p" href="#work">See what I build</a><a class="btn" href="#contact">Get in touch</a></div>
   </div>
+  <div class="term" aria-label="Terminal summary of my profile">
+    <div class="top"><i></i><i></i><i></i><span class="mono">dancan@nairobi: ~</span></div>
+    <pre class="mono" id="term"></pre>
+  </div>
+</div>
 
-  <section id="about"><div class="wrap">
-    <h2>About</h2>
-    <div class="about">
-      <p>I'm a software developer at Bizen Limited. My work sits where code meets compliance: backend services, database debugging and the integrations that connect financial products to AML and screening tools.</p>
-      <p>I also turn operational data into dashboards with Power BI, so teams can see what is happening and act on it.</p>
-    </div>
-  </div></section>
+<div class="wrap stats rv">
+  <div class="stat"><b data-n="yrs">0</b><span>years in tech roles</span></div>
+  <div class="stat"><b data-n="2">0</b><span>roles at Bizen Limited</span></div>
+  <div class="stat"><b data-n="4">0</b><span>certifications and trainings</span></div>
+  <div class="stat"><b>BSc IT</b><span>Masinde Muliro University</span></div>
+</div>
 
-  <section id="skills"><div class="wrap">
-    <h2>Skills</h2>
-    <div class="skills">
-      <div><h3>Backend</h3><ul><li>Java</li><li>Spring Boot</li><li>REST APIs</li></ul></div>
-      <div><h3>Data</h3><ul><li>SQL</li><li>Database debugging</li><li>Power BI and analytics</li></ul></div>
-      <div><h3>FinTech and compliance</h3><ul><li>AML integration</li><li>Customer screening</li><li>KYC workflows</li></ul></div>
-    </div>
-  </div></section>
+<section id="about"><div class="wrap about rv">
+  <div><p class="eyebrow mono">// about</p><h2>Where code meets finance</h2>
+    <p>I design and build software for the financial technology sector. My work covers digital payments, mobile money integration and the backend APIs behind real-time transaction processing and screening.</p>
+    <p>I started in business intelligence, turning raw data into Power BI dashboards for management. That background shapes how I build: systems that are reliable, secure and easy to act on.</p>
+    <p>Outside work, I mentor fellow students in coding, system administration and IT projects.</p></div>
+  <aside class="edu"><small class="mono">education</small><h3>BSc Information Technology</h3><p>Masinde Muliro University of Science and Technology, Kakamega<br>2020 to Dec 2024<br>Second Class Honours, Lower Division</p></aside>
+</div></section>
 
-  <section id="projects"><div class="wrap">
-    <h2>Projects</h2>
-    <a class="project" href="https://github.com/Sitina-Celine/TSS" target="_blank" rel="noopener">
-      <div><h3>TSS Project</h3><p>View the source code and details on GitHub.</p></div>
-      <span class="btn">Open on GitHub</span>
-    </a>
-  </div></section>
+<section id="experience"><div class="wrap rv">
+  <p class="eyebrow mono">// experience</p><h2>Career so far</h2>
+  <div class="tl">
+    <article class="job open"><header><div><h3>Software Developer, FinTech Solutions</h3><span class="co">Bizen Limited, Nairobi</span></div><span class="dt mono">Nov 2024 to present</span></header>
+      <ul><li>Design and develop secure, scalable software for the financial technology sector.</li><li>Build applications supporting digital payments, mobile money integration and financial inclusion.</li><li>Implement APIs and backend systems for real-time transaction processing, transaction screening and analytics.</li><li>Work with cross-functional teams and stakeholders to align systems with operational and customer-service needs.</li><li>Support system reliability, data integrity and security-conscious development.</li></ul><button type="button">Show less</button></article>
+    <article class="job"><header><div><h3>Data Analyst, Business Intelligence</h3><span class="co">Bizen Limited, Nairobi</span></div><span class="dt mono">Jun 2024 to Oct 2024</span></header>
+      <ul><li>Turned raw business data into insights for management using Microsoft Power BI.</li><li>Designed interactive dashboards and automated reports to track KPIs and performance trends.</li><li>Improved data preparation, accuracy and visualization for faster, more reliable decisions.</li></ul><button type="button">Show more</button></article>
+  </div>
+</div></section>
 
-  <section id="certifications"><div class="wrap">
-    <h2>Certifications</h2>
-    <div class="certs">
-      <div class="cert"><b>World-Check One Administrators Certification Assessment</b><span>LSEG, October 2026</span></div>
-      <div class="cert"><b>More certifications</b><a href="https://tinyurl.com/534wvf6e" target="_blank" rel="noopener">View the full list</a></div>
-    </div>
-  </div></section>
+<section id="work"><div class="wrap rv">
+  <p class="eyebrow mono">// what i build</p><h2>Systems I've worked on</h2>
+  <div class="cards">
+    <div class="card"><div class="ic">⛨</div><h3>Transaction screening system</h3><p>Backend services and APIs that screen transactions and customers as part of AML and compliance workflows, including integration with screening platforms.</p></div>
+    <div class="card"><div class="ic">⚡</div><h3>Real-time payment processing</h3><p>APIs and backend logic for digital payments and mobile money integration, built for reliability and data integrity.</p></div>
+    <div class="card"><div class="ic">▤</div><h3>Analytics and BI dashboards</h3><p>Interactive Power BI dashboards and automated reporting that help management monitor KPIs and decide faster.</p></div>
+  </div>
+</div></section>
 
-  <section id="contact" class="contact"><div class="wrap">
-    <h2>Contact</h2>
-    <p>Open to FinTech, compliance technology and data roles. Send me a message and I'll reply.</p>
-    <div class="links">
-      <a class="btn primary" href="mailto:your.email@example.com">Email me</a>
-      <a class="btn" href="https://linkedin.com/in/dancan-myoyo" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn" href="https://github.com/Danmyoyo" target="_blank" rel="noopener">GitHub</a>
-    </div>
-  </div></section>
+<section id="skills"><div class="wrap rv">
+  <p class="eyebrow mono">// skills</p><h2>Tools and strengths</h2>
+  <div class="chips" role="group" aria-label="Filter skills"><button class="on" data-f="all" type="button">All</button><button data-f="dev" type="button">Development</button><button data-f="data" type="button">Data and BI</button><button data-f="ops" type="button">Systems</button><button data-f="soft" type="button">Professional</button></div>
+  <div class="sk" id="sk">
+    <span data-c="dev">Java</span><span data-c="dev">Python</span><span data-c="dev">SQL</span><span data-c="dev">Web Development</span><span data-c="dev">REST APIs</span>
+    <span data-c="data">Power BI</span><span data-c="data">Excel</span><span data-c="data">Tableau</span><span data-c="data">Data Analysis</span><span data-c="data">Business Intelligence</span>
+    <span data-c="ops">System Administration</span><span data-c="ops">Networking</span><span data-c="ops">Help Desk Management</span>
+    <span data-c="soft">Analytical Thinking</span><span data-c="soft">Stakeholder Engagement</span>
+  </div>
+</div></section>
+
+<section id="training"><div class="wrap rv">
+  <p class="eyebrow mono">// certifications and training</p><h2>Always learning</h2>
+  <div class="certs">
+    <div class="cert"><b>✓</b><div><h3>LSEG World-Check One Administrators Certification Assessment</h3><p>LSEG, October 2026</p></div></div>
+    <div class="cert"><b>✓</b><div><h3>Financial Intelligence Training (FITEC), Uganda</h3><p>Exposure to financial intelligence, AML, countering the financing of terrorism (CFT) and financial-crime compliance practices.</p></div></div>
+    <div class="cert"><b>✓</b><div><h3>Power BI and Data Analysis Training</h3><p>Bizen Limited. Data analysis, dashboard development, reporting and visualization.</p></div></div>
+    <div class="cert"><b>✓</b><div><h3>Internal Professional Development Training</h3><p>Bizen Limited. Company-led learning in fintech, data analysis and software development.</p></div></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap rv"><div class="contact">
+  <p class="eyebrow mono">// contact</p><h2>Let's build something reliable</h2>
+  <p>Open to FinTech, compliance technology and data opportunities. Send me a message and I'll get back to you.</p>
+  <div class="cta"><a class="btn p" href="mailto:dancanmyoyo2001@gmail.com">dancanmyoyo2001@gmail.com</a><a class="btn" href="https://linkedin.com/in/dancan-myoyo" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/Danmyoyo" target="_blank" rel="noopener">GitHub</a></div>
+</div></div></section>
 </main>
-
-<footer><div class="wrap">&copy; <span id="yr">2026</span> Dancan Myoyo. Nairobi, Kenya.</div></footer>
+<footer>&copy; <span id="yr">2026</span> Otieno Dancan Myoyo · Nairobi, Kenya</footer>
 
 <script>
-document.getElementById('yr').textContent=new Date().getFullYear();
-const root=document.documentElement,btn=document.getElementById('theme');
-try{const s=localStorage.getItem('theme');if(s)root.dataset.theme=s}catch(e){}
-btn.addEventListener('click',()=>{
-  const dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
-  root.dataset.theme=dark?'light':'dark';
-  try{localStorage.setItem('theme',root.dataset.theme)}catch(e){}
-});
-/* screening card: the last row resolves once, on load */
-const live=document.getElementById('live');
-if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
-  setTimeout(()=>{live.className='tag clear';live.textContent='Clear'},2200);
-}else{live.className='tag clear';live.textContent='Clear'}
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const calm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+$('#yr').textContent=new Date().getFullYear();
+/* theme */
+const root=document.documentElement;
+try{const t=localStorage.getItem('theme');if(t)root.dataset.theme=t}catch(e){}
+$('#theme').onclick=()=>{root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem('theme',root.dataset.theme)}catch(e){}};
+$('#menu').onclick=e=>{const o=$('#links').classList.toggle('show');e.currentTarget.setAttribute('aria-expanded',o)};
+$$('#links a').forEach(a=>a.onclick=()=>$('#links').classList.remove('show'));
+/* rotating headline */
+const words=['secure payment systems.','transaction screening APIs.','dashboards that drive decisions.'];
+const el=$('#type');let w=0,c=0,del=false;
+function tick(){const s=words[w];c+=del?-1:1;el.textContent=s.slice(0,c);
+ let d=del?35:70;if(!del&&c===s.length){del=true;d=1600}else if(del&&c===0){del=false;w=(w+1)%words.length;d=350}setTimeout(tick,d)}
+if(calm)el.textContent=words[0];else tick();
+/* terminal */
+const lines=[['$ whoami','c'],['Otieno Dancan Myoyo','v'],['$ role --current','c'],['FinTech Software Developer @ Bizen Limited','v'],['$ stack','c'],['Java · Python · SQL · Power BI','v'],['$ focus','c'],['payments · screening · analytics','v'],['$ status','c'],['✔ shipping reliable systems','k']];
+const term=$('#term');let li=0,ci=0,html='';
+function typeLine(){if(li>=lines.length)return;const [t,k]=lines[li];ci++;
+ term.innerHTML=html+`<span class="${k}">${t.slice(0,ci)}</span>`;
+ if(ci>=t.length){html+=`<span class="${k}">${t}</span>\n`;li++;ci=0;setTimeout(typeLine,t[0]==='$'?350:150)}else setTimeout(typeLine,t[0]==='$'?55:18)}
+if(calm){term.innerHTML=lines.map(([t,k])=>`<span class="${k}">${t}</span>`).join('\n')}else typeLine();
+/* counters */
+const start=new Date(2024,5,1),yrs=Math.max(1,Math.floor((Date.now()-start)/31557600000));
+function count(n){const target=n.dataset.n==='yrs'?yrs:+n.dataset.n;let v=0;const step=()=>{v++;n.textContent=v+(n.dataset.n==='yrs'?'+':'');if(v<target&&!calm)setTimeout(step,200);else n.textContent=target+(n.dataset.n==='yrs'?'+':'')};step()}
+/* reveal and active nav */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('[data-n]').forEach(count);io.unobserve(e.target)}}),{threshold:.15});
+$$('.rv').forEach(r=>io.observe(r));
+const nav=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)$$('#links a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+$$('section').forEach(s=>nav.observe(s));
+addEventListener('scroll',()=>{const h=document.documentElement;$('#bar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+/* experience toggle */
+$$('.job').forEach(j=>{const t=()=>{const o=j.classList.toggle('open');j.querySelector('button').textContent=o?'Show less':'Show more'};j.querySelector('button').onclick=t;j.querySelector('header').onclick=t});
+/* skill filter */
+$$('.chips button').forEach(b=>b.onclick=()=>{$$('.chips button').forEach(x=>x.classList.toggle('on',x===b));$$('#sk span').forEach(s=>s.classList.toggle('off',b.dataset.f!=='all'&&s.dataset.c!==b.dataset.f))});
 </script>
 </body>
 </html>
