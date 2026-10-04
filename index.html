@@ -4,218 +4,296 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dancan Myoyo | FinTech Software Developer</title>
-<meta name="description" content="Otieno Dancan Myoyo, FinTech software developer in Nairobi building secure payment systems, transaction screening APIs and Power BI dashboards.">
+<meta name="description" content="Otieno Dancan Myoyo, FinTech software developer in Nairobi. Payment systems, transaction screening, AML technology, backend APIs and financial data analytics.">
 <meta name="theme-color" content="#070b14">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#070b14;--bg2:#0d1424;--card:#111a2e;--ink:#e8eefc;--mute:#93a3c4;--line:#1f2d4a;--a:#22d3ee;--b:#8b5cf6;--ok:#4ade80;--grid:rgba(34,211,238,.07)}
-:root[data-theme="light"]{--bg:#f4f7fc;--bg2:#e9eff9;--card:#fff;--ink:#0b1630;--mute:#51618a;--line:#d3ddf0;--a:#0a7ea4;--b:#6d3fe0;--ok:#168a45;--grid:rgba(10,126,164,.08)}
+:root{--bg:#070b14;--bg2:#0d1424;--card:#101a2e;--ink:#e8eefc;--mute:#93a3c4;--line:#1f2d4a;--a:#22d3ee;--b:#8b5cf6;--ok:#4ade80;--warn:#fbbf24;--grid:rgba(34,211,238,.06)}
+:root[data-theme="light"]{--bg:#f4f7fc;--bg2:#e9eff9;--card:#fff;--ink:#0b1630;--mute:#51618a;--line:#d3ddf0;--a:#0a7ea4;--b:#6d3fe0;--ok:#168a45;--warn:#b7791f;--grid:rgba(10,126,164,.07)}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
-body{background:var(--bg);color:var(--ink);font:400 1.02rem/1.7 Sora,system-ui,"Segoe UI",sans-serif;overflow-x:hidden;
-background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:44px 44px}
-body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(600px 400px at 85% 5%,rgba(139,92,246,.22),transparent),radial-gradient(500px 400px at 5% 30%,rgba(34,211,238,.14),transparent)}
+body{background:var(--bg);color:var(--ink);font:400 1rem/1.7 Sora,system-ui,"Segoe UI",sans-serif;overflow-x:hidden;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:44px 44px}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(600px 400px at 90% 0,rgba(139,92,246,.18),transparent),radial-gradient(500px 400px at 0 25%,rgba(34,211,238,.1),transparent)}
 a{color:inherit}h1,h2,h3{line-height:1.15;letter-spacing:-.02em}
 .mono{font-family:"JetBrains Mono",ui-monospace,Consolas,monospace}
 :focus-visible{outline:3px solid var(--a);outline-offset:3px;border-radius:6px}
-.wrap{width:min(1100px,100% - 2.5rem);margin-inline:auto}
-#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--a),var(--b));z-index:30}
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+header.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 nav{display:flex;align-items:center;justify-content:space-between;height:4rem;gap:1rem}
 .brand{font-weight:700;text-decoration:none}.brand span{color:var(--a)}
-nav ul{display:flex;gap:1.3rem;list-style:none;padding:0;align-items:center}
-nav ul a{text-decoration:none;color:var(--mute);font-size:.9rem;transition:color .2s}
+nav ul{display:flex;gap:1.2rem;list-style:none;padding:0;align-items:center}
+nav ul a{text-decoration:none;color:var(--mute);font-size:.88rem;transition:color .2s}
 nav ul a:hover,nav ul a.on{color:var(--a)}
-.ib{background:none;border:1px solid var(--line);color:var(--ink);border-radius:.6rem;padding:.35rem .7rem;cursor:pointer;font:inherit;font-size:.85rem}
+.ib{background:none;border:1px solid var(--line);color:var(--ink);border-radius:.6rem;padding:.35rem .7rem;cursor:pointer;font:inherit;font-size:.82rem;text-decoration:none;display:inline-block}
+.ib.cv{background:var(--a);border-color:var(--a);color:#06121c;font-weight:600}
 #menu{display:none}
-.hero{padding:5.5rem 0 4rem;display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
-.tag{display:inline-flex;gap:.5rem;align-items:center;font-size:.8rem;color:var(--ok);border:1px solid var(--line);background:var(--card);padding:.3rem .8rem;border-radius:999px}
-.tag i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 var(--ok);animation:pulse 2s infinite}
-@keyframes pulse{70%{box-shadow:0 0 0 9px transparent}}
-.hero h1{font-size:clamp(2.2rem,5.2vw,3.7rem);margin:1.2rem 0}
+.hero{padding:4.5rem 0 3.5rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.badge{display:inline-flex;gap:.5rem;align-items:center;font-size:.78rem;color:var(--ok);border:1px solid var(--line);background:var(--card);padding:.3rem .8rem;border-radius:999px}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--ok)}
+.hero h1{font-size:clamp(2.3rem,5vw,3.6rem);margin:1.1rem 0 .4rem}
 .grad{background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
-.cursor::after{content:"▍";color:var(--a);animation:blink 1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
-.lead{color:var(--mute);max-width:34rem}
-.cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
-.btn{padding:.75rem 1.4rem;border-radius:.7rem;font-weight:600;font-size:.95rem;text-decoration:none;border:1px solid var(--line);background:var(--card);transition:transform .2s,box-shadow .2s}
+.name{color:var(--mute);margin-bottom:1rem}
+.lead{color:var(--mute);max-width:33rem}
+.cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.8rem}
+.btn{padding:.7rem 1.25rem;border-radius:.7rem;font-weight:600;font-size:.92rem;text-decoration:none;border:1px solid var(--line);background:var(--card);color:var(--ink);font-family:inherit;cursor:pointer;transition:transform .2s,box-shadow .2s}
 .btn.p{background:linear-gradient(120deg,var(--a),var(--b));border:0;color:#fff}
-.btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px -10px var(--a)}
-.term{background:#050810;border:1px solid var(--line);border-radius:1rem;box-shadow:0 30px 60px -30px rgba(34,211,238,.4);overflow:hidden;color:#cfe0ff}
-.term .top{display:flex;gap:.4rem;padding:.7rem 1rem;background:#0b1222;border-bottom:1px solid var(--line);align-items:center}
-.term .top i{width:11px;height:11px;border-radius:50%;background:#ff5f57}.term .top i:nth-child(2){background:#febc2e}.term .top i:nth-child(3){background:#28c840}
-.term .top span{margin-left:.6rem;font-size:.75rem;color:#6b7fa8}
-.term pre{padding:1.2rem;font-size:.82rem;line-height:1.9;white-space:pre-wrap;min-height:15.5rem}
-.term .c{color:#4ade80}.term .k{color:#22d3ee}.term .v{color:#c4a8ff}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;padding-bottom:4rem}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:1.3rem;text-align:center}
-.stat b{display:block;font-size:2rem;color:var(--a)}.stat span{font-size:.85rem;color:var(--mute)}
-section{padding:4.5rem 0}
-.eyebrow{font-size:.8rem;color:var(--a);margin-bottom:.6rem}
-section h2{font-size:clamp(1.7rem,3.5vw,2.4rem);margin-bottom:2.2rem}
-.about{display:grid;grid-template-columns:1.2fr .8fr;gap:2.5rem}
-.about p+p{margin-top:1rem}.about p{color:var(--mute)}
-.edu{background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:1.5rem}
-.edu small{color:var(--a)}.edu h3{margin:.4rem 0;font-size:1.05rem}.edu p{font-size:.9rem}
-.tl{position:relative;padding-left:1.8rem;border-left:2px solid var(--line);display:grid;gap:1.5rem}
-.job{position:relative;background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:1.5rem;transition:border-color .2s}
-.job:hover{border-color:var(--a)}
-.job::before{content:"";position:absolute;left:-2.35rem;top:1.7rem;width:14px;height:14px;border-radius:50%;background:var(--a);box-shadow:0 0 0 4px var(--bg)}
-.job header{all:unset;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;cursor:pointer;width:100%}
-.job h3{font-size:1.15rem}.job .co{color:var(--mute);font-size:.9rem}.job .dt{color:var(--a);font-size:.8rem}
-.job ul{margin-top:1rem;padding-left:1.1rem;color:var(--mute);font-size:.93rem;display:none}
-.job.open ul{display:block}.job li{margin:.4rem 0}
-.job button{all:unset;display:block;cursor:pointer;color:var(--a);font-size:.8rem;margin-top:.9rem}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
-.card{background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:1.6rem;transition:transform .25s,border-color .25s}
-.card:hover{transform:translateY(-6px);border-color:var(--b)}
-.card .ic{width:2.8rem;height:2.8rem;border-radius:.8rem;display:grid;place-items:center;background:linear-gradient(135deg,var(--a),var(--b));color:#fff;font-size:1.2rem;margin-bottom:1rem}
-.card h3{font-size:1.1rem;margin-bottom:.5rem}.card p{color:var(--mute);font-size:.92rem}
-.chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
-.chips button{background:var(--card);border:1px solid var(--line);color:var(--mute);padding:.4rem 1rem;border-radius:999px;cursor:pointer;font:inherit;font-size:.85rem}
-.chips button.on{background:var(--a);color:#06121c;border-color:var(--a);font-weight:600}
-.sk{display:flex;flex-wrap:wrap;gap:.6rem}
-.sk span{background:var(--card);border:1px solid var(--line);padding:.5rem 1rem;border-radius:.6rem;font-size:.88rem;transition:opacity .2s,transform .2s}
-.sk span.off{display:none}
-.certs{display:grid;gap:1rem}
-.cert{display:flex;gap:1rem;background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:1.2rem 1.5rem;align-items:flex-start}
-.cert b{color:var(--ok);font-size:1.3rem}.cert h3{font-size:1rem}.cert p{color:var(--mute);font-size:.88rem}
-.contact{text-align:center;background:var(--card);border:1px solid var(--line);border-radius:1.4rem;padding:3.5rem 1.5rem}
-.contact p{color:var(--mute);max-width:32rem;margin:0 auto}
-.contact .cta{justify-content:center}
-footer{padding:2.5rem 0;text-align:center;color:var(--mute);font-size:.82rem}
-.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
-@media(max-width:860px){.hero,.about{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.hero{padding-top:3rem}
-#menu{display:inline-block}nav ul{display:none;position:absolute;top:4rem;left:0;right:0;flex-direction:column;background:var(--bg2);padding:1.2rem;border-bottom:1px solid var(--line)}nav ul.show{display:flex}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 28px -12px var(--a)}
+.dash{background:var(--card);border:1px solid var(--line);border-radius:1.1rem;padding:1.2rem;box-shadow:0 30px 60px -35px var(--a)}
+.dh{display:flex;justify-content:space-between;align-items:center;gap:.6rem;flex-wrap:wrap;margin-bottom:1rem}
+.dh b{font-size:.9rem}.dh small{color:var(--mute);font-size:.72rem}
+.rng button{background:none;border:1px solid var(--line);color:var(--mute);border-radius:.4rem;padding:.15rem .55rem;font:inherit;font-size:.72rem;cursor:pointer}
+.rng button.on{background:var(--a);color:#06121c;border-color:var(--a)}
+.kp{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-bottom:1rem}
+.kp div{background:var(--bg2);border-radius:.7rem;padding:.6rem .7rem}
+.kp small{display:block;color:var(--mute);font-size:.68rem}.kp b{font-size:1.1rem}
+.two{display:grid;grid-template-columns:1.5fr 1fr;gap:.8rem;align-items:center}
+svg{display:block;width:100%;height:auto}
+.ln{fill:none;stroke:var(--a);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.gl{stroke:var(--line);stroke-width:1}
+.leg{display:flex;flex-wrap:wrap;gap:.3rem .8rem;font-size:.68rem;color:var(--mute);justify-content:center;margin-top:.3rem}
+.leg i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:.3rem}
+.note{font-size:.7rem;color:var(--mute);margin-top:.8rem}
+section{padding:4.2rem 0}
+.eyebrow{font-size:.78rem;color:var(--a);margin-bottom:.5rem}
+section h2{font-size:clamp(1.7rem,3.4vw,2.35rem);margin-bottom:.6rem}
+.sub{color:var(--mute);max-width:40rem;margin-bottom:2.2rem}
+.focus{display:grid;grid-template-columns:repeat(5,1fr);gap:.9rem}
+.fc{background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:1.2rem;transition:border-color .2s,transform .2s}
+.fc:hover{border-color:var(--a);transform:translateY(-4px)}
+.fc .ic{font-size:1.4rem;margin-bottom:.6rem;color:var(--a)}.fc h3{font-size:.95rem;margin-bottom:.3rem}.fc p{font-size:.8rem;color:var(--mute);line-height:1.5}
+.case{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;background:var(--card);border:1px solid var(--line);border-radius:1.2rem;padding:1.8rem;margin-bottom:1.5rem}
+.case h3{font-size:1.35rem;margin:.2rem 0 1rem}
+.case dl{display:grid;gap:.7rem}.case dt{font-size:.72rem;color:var(--a);text-transform:uppercase;letter-spacing:.08em}
+.case dd{color:var(--mute);font-size:.92rem}
+.tech{display:flex;flex-wrap:wrap;gap:.4rem}.tech span{border:1px solid var(--line);border-radius:.4rem;padding:.1rem .55rem;font-size:.75rem;color:var(--ink)}
+.viz{background:var(--bg2);border:1px solid var(--line);border-radius:1rem;padding:1rem;align-self:start}
+.viz small{display:block;color:var(--mute);font-size:.7rem;margin-bottom:.6rem}
+.bx{fill:var(--card);stroke:var(--a);stroke-width:1.2}.bt{fill:var(--ink);font:600 9.5px Sora,sans-serif;text-anchor:middle}.ar{stroke:var(--mute);stroke-width:1.4;fill:none}
+.bar{fill:var(--b)}.ax{fill:var(--mute);font:9px Sora,sans-serif;text-anchor:middle}
+.tl{display:grid;gap:1.2rem;border-left:2px solid var(--line);padding-left:1.6rem;position:relative}
+.job{position:relative;background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:1.4rem}
+.job::before{content:"";position:absolute;left:-2.15rem;top:1.6rem;width:12px;height:12px;border-radius:50%;background:var(--a);box-shadow:0 0 0 4px var(--bg)}
+.jh{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}.jh h3{font-size:1.1rem}.jh span{color:var(--a);font-size:.78rem}
+.co{color:var(--mute);font-size:.88rem}
+.job ul{margin-top:.8rem;padding-left:1.1rem;color:var(--mute);font-size:.9rem}.job li{margin:.35rem 0}.job li b{color:var(--ink);font-weight:600}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.sg div{background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:1.2rem}
+.sg h3{font-size:.95rem;color:var(--a);margin-bottom:.7rem}.sg ul{list-style:none;padding:0;font-size:.88rem;color:var(--mute)}.sg li{padding:.2rem 0}
+.feat{display:grid;grid-template-columns:auto 1fr;gap:1.4rem;background:linear-gradient(135deg,rgba(34,211,238,.12),rgba(139,92,246,.14));border:1px solid var(--a);border-radius:1.2rem;padding:1.8rem;margin-bottom:1rem}
+.feat .seal{width:4.2rem;height:4.2rem;border-radius:1rem;background:linear-gradient(135deg,var(--a),var(--b));display:grid;place-items:center;color:#fff;font-size:1.8rem}
+.feat h3{font-size:1.3rem}.feat p{color:var(--mute);font-size:.92rem;margin-top:.4rem}
+.mini{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.8rem}
+.mini div{background:var(--card);border:1px solid var(--line);border-radius:.9rem;padding:1rem 1.2rem}
+.mini h3{font-size:.9rem}.mini p{font-size:.8rem;color:var(--mute);margin-top:.2rem;line-height:1.5}
+.final{text-align:center;background:linear-gradient(135deg,rgba(34,211,238,.1),rgba(139,92,246,.16));border:1px solid var(--line);border-radius:1.4rem;padding:3.5rem 1.5rem}
+.final h2{font-size:clamp(1.8rem,4vw,2.8rem);max-width:36rem;margin:0 auto 1rem}.final p{color:var(--mute);max-width:34rem;margin:0 auto}
+.final .cta{justify-content:center}
+footer{padding:2rem 0;text-align:center;color:var(--mute);font-size:.8rem}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+.toast{position:fixed;left:50%;bottom:1.5rem;transform:translate(-50%,20px);background:var(--card);border:1px solid var(--a);color:var(--ink);padding:.7rem 1.2rem;border-radius:.8rem;font-size:.88rem;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:50;max-width:90vw;text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.mailtxt{margin-top:1.2rem;font-size:.85rem;color:var(--mute)}.mailtxt b{color:var(--ink);font-weight:600}
+@media(max-width:940px){.hero,.case{grid-template-columns:1fr}.focus{grid-template-columns:repeat(2,1fr)}.hero{padding-top:2.5rem}
+#menu{display:inline-block}nav ul{display:none;position:absolute;top:4rem;left:0;right:0;flex-direction:column;align-items:flex-start;background:var(--bg2);padding:1.2rem 1.5rem;border-bottom:1px solid var(--line)}nav ul.show{display:flex}.feat{grid-template-columns:1fr}}
+@media(max-width:520px){.focus{grid-template-columns:1fr}.kp{grid-template-columns:1fr 1fr 1fr}.case{padding:1.2rem}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<div id="bar"></div>
-<header><nav class="wrap" aria-label="Main">
+<header class="top"><nav class="wrap" aria-label="Main">
   <a class="brand mono" href="#top">&lt;<span>Dancan</span>/&gt;</a>
   <ul id="links">
-    <li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#work">What I build</a></li>
-    <li><a href="#skills">Skills</a></li><li><a href="#training">Training</a></li><li><a href="#contact">Contact</a></li>
+    <li><a href="#focus">Focus</a></li><li><a href="#projects">Projects</a></li><li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li><li><a href="#credentials">Credentials</a></li><li><a href="#contact">Contact</a></li>
+    <li><a href="https://linkedin.com/in/dancan-myoyo" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="https://github.com/Danmyoyo" target="_blank" rel="noopener">GitHub</a></li>
   </ul>
-  <span><button class="ib" id="theme" type="button" aria-label="Switch theme">☀ / ☾</button> <button class="ib" id="menu" type="button" aria-label="Menu" aria-expanded="false">☰</button></span>
+  <span><a class="ib cv" href="Dancan-Myoyo-CV.pdf" download>Download CV</a> <button class="ib" id="theme" type="button" aria-label="Switch theme">☀/☾</button> <button class="ib" id="menu" type="button" aria-label="Menu" aria-expanded="false">☰</button></span>
 </nav></header>
 
 <main id="top">
 <div class="wrap hero">
   <div>
-    <span class="tag mono"><i></i> Open to FinTech and data roles</span>
-    <h1>I build <span class="grad cursor" id="type"></span></h1>
-    <p class="lead">Otieno Dancan Myoyo. Software developer at Bizen Limited in Nairobi, creating secure, scalable systems for payments, transaction screening and financial data.</p>
-    <div class="cta"><a class="btn p" href="#work">See what I build</a><a class="btn" href="#contact">Get in touch</a></div>
+    <span class="badge mono"><i></i> Available for FinTech roles</span>
+    <h1><span class="grad">FinTech Software Developer</span></h1>
+    <p class="name">Otieno Dancan Myoyo · Nairobi, Kenya</p>
+    <p class="lead">I build secure payment systems, transaction screening and AML technology, backend APIs and the financial data analytics that sit on top of them.</p>
+    <div class="cta">
+      <a class="btn p" href="#projects">View work</a>
+      <a class="btn" href="Dancan-Myoyo-CV.pdf" download>Download CV</a>
+      <a class="btn" href="https://linkedin.com/in/dancan-myoyo" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/Danmyoyo" target="_blank" rel="noopener">GitHub</a>
+    </div>
   </div>
-  <div class="term" aria-label="Terminal summary of my profile">
-    <div class="top"><i></i><i></i><i></i><span class="mono">dancan@nairobi: ~</span></div>
-    <pre class="mono" id="term"></pre>
+  <div class="dash" aria-label="Sample transaction monitoring dashboard">
+    <div class="dh"><div><b>Transaction monitoring</b><br><small>Illustrative sample data</small></div><div class="rng" id="rng"><button class="on" data-r="7" type="button">7D</button> <button data-r="30" type="button">30D</button> <button data-r="90" type="button">90D</button></div></div>
+    <div class="kp"><div><small>Processed</small><b id="k1">0</b></div><div><small>Auto-cleared</small><b id="k2">0</b></div><div><small>Flagged</small><b id="k3">0</b></div></div>
+    <div class="two"><svg id="hl" viewBox="0 0 420 150" role="img" aria-label="Transaction volume trend"></svg><div><svg id="hd" viewBox="0 0 120 120" role="img" aria-label="Screening outcomes"></svg>
+    <div class="leg"><span><i style="background:var(--ok)"></i>Clear</span><span><i style="background:var(--warn)"></i>Review</span><span><i style="background:var(--b)"></i>Escalated</span></div></div></div>
+    <p class="note">Sample figures only, to show the kind of monitoring views I build.</p>
   </div>
 </div>
 
-<div class="wrap stats rv">
-  <div class="stat"><b data-n="yrs">0</b><span>years in tech roles</span></div>
-  <div class="stat"><b data-n="2">0</b><span>roles at Bizen Limited</span></div>
-  <div class="stat"><b data-n="4">0</b><span>certifications and trainings</span></div>
-  <div class="stat"><b>BSc IT</b><span>Masinde Muliro University</span></div>
-</div>
+<section id="focus"><div class="wrap rv">
+  <p class="eyebrow mono">// specialization</p><h2>Built around FinTech</h2>
+  <p class="sub">Five areas where I do my best work, from the transaction itself to the insight leadership gets from it.</p>
+  <div class="focus">
+    <div class="fc"><div class="ic">◈</div><h3>Payment systems</h3><p>Digital payments and mobile money integration.</p></div>
+    <div class="fc"><div class="ic">⛨</div><h3>Transaction screening</h3><p>Real-time checks built into transaction flows.</p></div>
+    <div class="fc"><div class="ic">⚖</div><h3>AML and sanctions technology</h3><p>Compliance workflows and screening platform integration.</p></div>
+    <div class="fc"><div class="ic">⌁</div><h3>Backend APIs</h3><p>Secure, scalable services in Java and Spring Boot.</p></div>
+    <div class="fc"><div class="ic">▥</div><h3>Financial data and BI</h3><p>KPI dashboards and automated reporting in Power BI.</p></div>
+  </div>
+</div></section>
 
-<section id="about"><div class="wrap about rv">
-  <div><p class="eyebrow mono">// about</p><h2>Where code meets finance</h2>
-    <p>I design and build software for the financial technology sector. My work covers digital payments, mobile money integration and the backend APIs behind real-time transaction processing and screening.</p>
-    <p>I started in business intelligence, turning raw data into Power BI dashboards for management. That background shapes how I build: systems that are reliable, secure and easy to act on.</p>
-    <p>Outside work, I mentor fellow students in coding, system administration and IT projects.</p></div>
-  <aside class="edu"><small class="mono">education</small><h3>BSc Information Technology</h3><p>Masinde Muliro University of Science and Technology, Kakamega<br>2020 to Dec 2024<br>Second Class Honours, Lower Division</p></aside>
+<section id="projects"><div class="wrap rv">
+  <p class="eyebrow mono">// featured work</p><h2>Case studies</h2>
+  <p class="sub">Systems I have worked on at Bizen Limited, described by the problem, what I built and my part in it.</p>
+
+  <article class="case">
+    <div><span class="mono eyebrow">01 · compliance</span><h3>Transaction screening and AML integration</h3>
+    <dl>
+      <div><dt>Problem</dt><dd>Financial transactions and customers must be checked against sanctions and risk lists before and during processing, without slowing payments down.</dd></div>
+      <div><dt>What I built</dt><dd>Backend APIs and services that send customers and transactions for screening, handle the results and route cases that need review.</dd></div>
+      <div><dt>Technologies</dt><dd class="tech"><span>Java</span><span>Spring Boot</span><span>REST APIs</span><span>SQL</span></dd></div>
+      <div><dt>My contribution</dt><dd>I implemented the APIs and backend logic, worked with stakeholders to turn compliance needs into requirements, and kept the data reliable and secure.</dd></div>
+      <div><dt>Result</dt><dd>Screening runs as part of the transaction workflow, so compliance checks and analytics are built into how the system operates.</dd></div>
+    </dl></div>
+    <div class="viz"><small>Simplified architecture</small><svg id="f1" role="img" aria-label="Screening architecture diagram"></svg></div>
+  </article>
+
+  <article class="case">
+    <div><span class="mono eyebrow">02 · payments</span><h3>Digital payments and mobile money integration</h3>
+    <dl>
+      <div><dt>Problem</dt><dd>Payment products need to process transactions in real time and connect to mobile money channels while keeping records accurate.</dd></div>
+      <div><dt>What I built</dt><dd>Applications and backend APIs supporting digital payments, mobile money integration and financial inclusion use cases.</dd></div>
+      <div><dt>Technologies</dt><dd class="tech"><span>Java</span><span>Spring Boot</span><span>REST APIs</span><span>SQL</span></dd></div>
+      <div><dt>My contribution</dt><dd>I translated operational requirements into working software and supported reliability, data integrity and security-conscious development.</dd></div>
+      <div><dt>Result</dt><dd>Real-time transaction processing that integrates across financial workflows and supports customer-service needs.</dd></div>
+    </dl></div>
+    <div class="viz"><small>Simplified architecture</small><svg id="f2" role="img" aria-label="Payments architecture diagram"></svg></div>
+  </article>
+
+  <article class="case">
+    <div><span class="mono eyebrow">03 · analytics</span><h3>Financial data and BI dashboards</h3>
+    <dl>
+      <div><dt>Problem</dt><dd>Management needed quick, trustworthy views of performance and KPIs instead of manual, scattered reports.</dd></div>
+      <div><dt>What I built</dt><dd>Interactive Power BI dashboards and automated reporting, with cleaner data preparation behind them.</dd></div>
+      <div><dt>Technologies</dt><dd class="tech"><span>Power BI</span><span>Excel</span><span>SQL</span><span>Data modelling</span></dd></div>
+      <div><dt>My contribution</dt><dd>I analysed business data, designed the dashboards and improved data accuracy and visualization.</dd></div>
+      <div><dt>Result</dt><dd>Faster access to reliable information for operational and strategic decisions.</dd></div>
+    </dl></div>
+    <div class="viz"><small>Sample KPI view (illustrative data)</small><svg id="bc" viewBox="0 0 300 170" role="img" aria-label="Sample KPI bar chart"></svg></div>
+  </article>
 </div></section>
 
 <section id="experience"><div class="wrap rv">
-  <p class="eyebrow mono">// experience</p><h2>Career so far</h2>
+  <p class="eyebrow mono">// experience</p><h2>What I have built and delivered</h2>
   <div class="tl">
-    <article class="job open"><header><div><h3>Software Developer, FinTech Solutions</h3><span class="co">Bizen Limited, Nairobi</span></div><span class="dt mono">Nov 2024 to present</span></header>
-      <ul><li>Design and develop secure, scalable software for the financial technology sector.</li><li>Build applications supporting digital payments, mobile money integration and financial inclusion.</li><li>Implement APIs and backend systems for real-time transaction processing, transaction screening and analytics.</li><li>Work with cross-functional teams and stakeholders to align systems with operational and customer-service needs.</li><li>Support system reliability, data integrity and security-conscious development.</li></ul><button type="button">Show less</button></article>
-    <article class="job"><header><div><h3>Data Analyst, Business Intelligence</h3><span class="co">Bizen Limited, Nairobi</span></div><span class="dt mono">Jun 2024 to Oct 2024</span></header>
-      <ul><li>Turned raw business data into insights for management using Microsoft Power BI.</li><li>Designed interactive dashboards and automated reports to track KPIs and performance trends.</li><li>Improved data preparation, accuracy and visualization for faster, more reliable decisions.</li></ul><button type="button">Show more</button></article>
-  </div>
-</div></section>
-
-<section id="work"><div class="wrap rv">
-  <p class="eyebrow mono">// what i build</p><h2>Systems I've worked on</h2>
-  <div class="cards">
-    <div class="card"><div class="ic">⛨</div><h3>Transaction screening system</h3><p>Backend services and APIs that screen transactions and customers as part of AML and compliance workflows, including integration with screening platforms.</p></div>
-    <div class="card"><div class="ic">⚡</div><h3>Real-time payment processing</h3><p>APIs and backend logic for digital payments and mobile money integration, built for reliability and data integrity.</p></div>
-    <div class="card"><div class="ic">▤</div><h3>Analytics and BI dashboards</h3><p>Interactive Power BI dashboards and automated reporting that help management monitor KPIs and decide faster.</p></div>
+    <article class="job"><div class="jh"><h3>Software Developer, FinTech Solutions</h3><span class="mono">Nov 2024 to present</span></div><p class="co">Bizen Limited, Nairobi</p>
+      <ul><li><b>Built</b> secure, scalable applications for digital payments, mobile money integration and financial inclusion.</li><li><b>Implemented</b> APIs and backend systems for real-time transaction processing, transaction screening and analytics.</li><li><b>Delivered</b> with cross-functional teams, aligning systems to operational and customer-service needs.</li><li><b>Protected</b> system reliability, data integrity and security through careful development practice.</li></ul></article>
+    <article class="job"><div class="jh"><h3>Data Analyst, Business Intelligence</h3><span class="mono">Jun 2024 to Oct 2024</span></div><p class="co">Bizen Limited, Nairobi</p>
+      <ul><li><b>Designed</b> interactive Power BI dashboards and automated reports to track KPIs and trends.</li><li><b>Improved</b> data preparation, accuracy and visualization so decisions could be made faster.</li><li><b>Advised</b> management on growth opportunities and resource allocation using data.</li></ul></article>
+    <article class="job"><div class="jh"><h3>BSc Information Technology</h3><span class="mono">2020 to Dec 2024</span></div><p class="co">Masinde Muliro University of Science and Technology, Kakamega</p>
+      <ul><li>Peer mentor: supported students in coding, system administration and IT projects.</li></ul></article>
   </div>
 </div></section>
 
 <section id="skills"><div class="wrap rv">
-  <p class="eyebrow mono">// skills</p><h2>Tools and strengths</h2>
-  <div class="chips" role="group" aria-label="Filter skills"><button class="on" data-f="all" type="button">All</button><button data-f="dev" type="button">Development</button><button data-f="data" type="button">Data and BI</button><button data-f="ops" type="button">Systems</button><button data-f="soft" type="button">Professional</button></div>
-  <div class="sk" id="sk">
-    <span data-c="dev">Java</span><span data-c="dev">Python</span><span data-c="dev">SQL</span><span data-c="dev">Web Development</span><span data-c="dev">REST APIs</span>
-    <span data-c="data">Power BI</span><span data-c="data">Excel</span><span data-c="data">Tableau</span><span data-c="data">Data Analysis</span><span data-c="data">Business Intelligence</span>
-    <span data-c="ops">System Administration</span><span data-c="ops">Networking</span><span data-c="ops">Help Desk Management</span>
-    <span data-c="soft">Analytical Thinking</span><span data-c="soft">Stakeholder Engagement</span>
+  <p class="eyebrow mono">// skills</p><h2>Skills by area</h2><div style="height:1rem"></div>
+  <div class="sg">
+    <div><h3>Backend</h3><ul><li>Java</li><li>Spring Boot</li><li>REST APIs</li><li>Python</li><li>SQL</li></ul></div>
+    <div><h3>FinTech</h3><ul><li>Digital payments</li><li>Mobile money integration</li><li>Transaction screening</li><li>AML and KYC workflows</li></ul></div>
+    <div><h3>Data</h3><ul><li>Power BI</li><li>Excel and Tableau</li><li>Data analysis</li><li>Dashboards and reporting</li></ul></div>
+    <div><h3>Systems</h3><ul><li>System administration</li><li>Networking</li><li>Help desk management</li></ul></div>
+    <div><h3>Engineering</h3><ul><li>Secure development</li><li>System reliability</li><li>Data integrity</li><li>Stakeholder engagement</li></ul></div>
   </div>
 </div></section>
 
-<section id="training"><div class="wrap rv">
-  <p class="eyebrow mono">// certifications and training</p><h2>Always learning</h2>
-  <div class="certs">
-    <div class="cert"><b>✓</b><div><h3>LSEG World-Check One Administrators Certification Assessment</h3><p>LSEG, October 2026</p></div></div>
-    <div class="cert"><b>✓</b><div><h3>Financial Intelligence Training (FITEC), Uganda</h3><p>Exposure to financial intelligence, AML, countering the financing of terrorism (CFT) and financial-crime compliance practices.</p></div></div>
-    <div class="cert"><b>✓</b><div><h3>Power BI and Data Analysis Training</h3><p>Bizen Limited. Data analysis, dashboard development, reporting and visualization.</p></div></div>
-    <div class="cert"><b>✓</b><div><h3>Internal Professional Development Training</h3><p>Bizen Limited. Company-led learning in fintech, data analysis and software development.</p></div></div>
+<section id="credentials"><div class="wrap rv">
+  <p class="eyebrow mono">// credentials</p><h2>Certifications and training</h2><div style="height:1rem"></div>
+  <div class="feat"><div class="seal">✓</div><div><span class="mono eyebrow">featured certification · LSEG · October 2026</span><h3>World-Check One Administrators Certification Assessment</h3><p>Certified on administering World-Check One, LSEG's risk intelligence and screening platform, which supports customer and third-party due diligence in compliance workflows.</p></div></div>
+  <div class="mini">
+    <div><h3>Financial Intelligence Training (FITEC), Uganda</h3><p>Financial intelligence, AML, countering the financing of terrorism and financial-crime compliance.</p></div>
+    <div><h3>Power BI and Data Analysis Training</h3><p>Bizen Limited. Dashboards, reporting and visualization.</p></div>
+    <div><h3>Internal Professional Development</h3><p>Bizen Limited. Fintech, data analysis and software development.</p></div>
   </div>
 </div></section>
 
-<section id="contact"><div class="wrap rv"><div class="contact">
-  <p class="eyebrow mono">// contact</p><h2>Let's build something reliable</h2>
-  <p>Open to FinTech, compliance technology and data opportunities. Send me a message and I'll get back to you.</p>
-  <div class="cta"><a class="btn p" href="mailto:dancanmyoyo2001@gmail.com">dancanmyoyo2001@gmail.com</a><a class="btn" href="https://linkedin.com/in/dancan-myoyo" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/Danmyoyo" target="_blank" rel="noopener">GitHub</a></div>
+<section id="contact"><div class="wrap rv"><div class="final">
+  <h2>Building the next generation of financial technology.</h2>
+  <p>Available for FinTech software engineering, compliance technology and data opportunities.</p>
+  <div class="cta"><a class="btn p" id="mail" href="mailto:dancanmyoyo2001@gmail.com">Email me</a><button class="btn" id="copy" type="button">Copy email</button><a class="btn" href="Dancan-Myoyo-CV.pdf" download>Download CV</a><a class="btn" href="https://linkedin.com/in/dancan-myoyo" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/Danmyoyo" target="_blank" rel="noopener">GitHub</a></div>
+  <p class="mailtxt mono">Or write to <b>dancanmyoyo2001@gmail.com</b></p>
 </div></div></section>
 </main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 <footer>&copy; <span id="yr">2026</span> Otieno Dancan Myoyo · Nairobi, Kenya</footer>
 
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
-const calm=matchMedia('(prefers-reduced-motion: reduce)').matches;
 $('#yr').textContent=new Date().getFullYear();
-/* theme */
 const root=document.documentElement;
 try{const t=localStorage.getItem('theme');if(t)root.dataset.theme=t}catch(e){}
 $('#theme').onclick=()=>{root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem('theme',root.dataset.theme)}catch(e){}};
 $('#menu').onclick=e=>{const o=$('#links').classList.toggle('show');e.currentTarget.setAttribute('aria-expanded',o)};
 $$('#links a').forEach(a=>a.onclick=()=>$('#links').classList.remove('show'));
-/* rotating headline */
-const words=['secure payment systems.','transaction screening APIs.','dashboards that drive decisions.'];
-const el=$('#type');let w=0,c=0,del=false;
-function tick(){const s=words[w];c+=del?-1:1;el.textContent=s.slice(0,c);
- let d=del?35:70;if(!del&&c===s.length){del=true;d=1600}else if(del&&c===0){del=false;w=(w+1)%words.length;d=350}setTimeout(tick,d)}
-if(calm)el.textContent=words[0];else tick();
-/* terminal */
-const lines=[['$ whoami','c'],['Otieno Dancan Myoyo','v'],['$ role --current','c'],['FinTech Software Developer @ Bizen Limited','v'],['$ stack','c'],['Java · Python · SQL · Power BI','v'],['$ focus','c'],['payments · screening · analytics','v'],['$ status','c'],['✔ shipping reliable systems','k']];
-const term=$('#term');let li=0,ci=0,html='';
-function typeLine(){if(li>=lines.length)return;const [t,k]=lines[li];ci++;
- term.innerHTML=html+`<span class="${k}">${t.slice(0,ci)}</span>`;
- if(ci>=t.length){html+=`<span class="${k}">${t}</span>\n`;li++;ci=0;setTimeout(typeLine,t[0]==='$'?350:150)}else setTimeout(typeLine,t[0]==='$'?55:18)}
-if(calm){term.innerHTML=lines.map(([t,k])=>`<span class="${k}">${t}</span>`).join('\n')}else typeLine();
-/* counters */
-const start=new Date(2024,5,1),yrs=Math.max(1,Math.floor((Date.now()-start)/31557600000));
-function count(n){const target=n.dataset.n==='yrs'?yrs:+n.dataset.n;let v=0;const step=()=>{v++;n.textContent=v+(n.dataset.n==='yrs'?'+':'');if(v<target&&!calm)setTimeout(step,200);else n.textContent=target+(n.dataset.n==='yrs'?'+':'')};step()}
-/* reveal and active nav */
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('[data-n]').forEach(count);io.unobserve(e.target)}}),{threshold:.15});
+
+/* ---- sample data (illustrative) ---- */
+const gen=n=>Array.from({length:n},(_,i)=>Math.round(52+14*Math.sin(i/(n>30?6:2.2))+i*(n>30?.18:2.2)+(i%3)*3));
+const sets={7:gen(7),30:gen(30),90:gen(90)};
+function line(svg,d){const W=420,H=150,p=10,mx=Math.max(...d)*1.1,mn=Math.min(...d)*.8;
+ const pts=d.map((v,i)=>[p+i*(W-2*p)/(d.length-1),H-p-(v-mn)/(mx-mn)*(H-2*p)]);
+ const path='M'+pts.map(q=>q[0].toFixed(1)+','+q[1].toFixed(1)).join(' L');
+ let g='';for(let i=0;i<4;i++){const y=p+i*(H-2*p)/3;g+=`<line class="gl" x1="${p}" x2="${W-p}" y1="${y}" y2="${y}"/>`}
+ svg.innerHTML=`<defs><linearGradient id="lg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--a);stop-opacity:.35"/><stop offset="1" style="stop-color:var(--a);stop-opacity:0"/></linearGradient></defs>${g}<path d="${path} L${W-p},${H-p} L${p},${H-p}Z" fill="url(#lg)"/><path class="ln" d="${path}"/>`}
+function donut(svg,parts,cols){const C=2*Math.PI*40;let off=0;
+ svg.innerHTML=parts.map((v,i)=>{const len=C*v/100,s=`<circle cx="60" cy="60" r="40" fill="none" style="stroke:${cols[i]}" stroke-width="16" stroke-dasharray="${len} ${C-len}" stroke-dashoffset="${-off}" transform="rotate(-90 60 60)"/>`;off+=len;return s}).join('')+`<text x="60" y="64" text-anchor="middle" class="bt" style="font-size:13px">${parts[0]}%</text>`}
+function dash(r){const d=sets[r],tot=d.reduce((a,b)=>a+b,0)*180,clear=96.8,flag=Math.round(tot*.032);
+ $('#k1').textContent=tot.toLocaleString();$('#k2').textContent=clear+'%';$('#k3').textContent=flag.toLocaleString();
+ line($('#hl'),d);donut($('#hd'),[clear,2.4,.8],['var(--ok)','var(--warn)','var(--b)'])}
+$$('#rng button').forEach(b=>b.onclick=()=>{$$('#rng button').forEach(x=>x.classList.toggle('on',x===b));dash(b.dataset.r)});
+dash(7);
+
+/* ---- architecture diagrams ---- */
+function flow(svg,nodes){const w=112,h=44,gap=26;let o='';
+ const cols=2,rows=Math.ceil(nodes.length/cols),pw=w*cols+gap*(cols-1),H=rows*(h+gap)-gap;
+ const pos=nodes.map((_,i)=>{const r=Math.floor(i/cols),c=r%2?cols-1-(i%cols):i%cols;return [c*(w+gap),r*(h+gap)]});
+ pos.forEach((p,i)=>{if(i){const q=pos[i-1];const x1=q[0]+w/2,y1=q[1]+h/2,x2=p[0]+w/2,y2=p[1]+h/2;
+  const sx=x1===x2?x1:(x2>x1?q[0]+w:q[0]),ex=x1===x2?x2:(x2>x1?p[0]:p[0]+w),sy=x1===x2?q[1]+h:y1,ey=x1===x2?p[1]:y2;
+  o+=`<path class="ar" d="M${sx},${sy} L${ex},${ey}"/><circle cx="${ex}" cy="${ey}" r="2.5" style="fill:var(--a)"/>`}});
+ pos.forEach((p,i)=>{const t=nodes[i].split('|');o+=`<rect class="bx" x="${p[0]}" y="${p[1]}" width="${w}" height="${h}" rx="9"/>`+t.map((s,j)=>`<text class="bt" x="${p[0]+w/2}" y="${p[1]+(t.length>1?h/2-3+j*12:h/2+3.5)}">${s}</text>`).join('')});
+ svg.setAttribute('viewBox',`-4 -4 ${pw+8} ${H+8}`);svg.innerHTML=o}
+flow($('#f1'),['Core system|or channel','Screening|API','Screening|platform','Decision|Clear / Review','Case review|workflow','Database|and analytics']);
+flow($('#f2'),['Customer|or agent app','Payments|API','Mobile money|channel','Transaction|processing','Ledger|database','Reports|and alerts']);
+
+/* ---- KPI bar chart ---- */
+(function(){const v=[38,52,47,66,74,88],l=['M1','M2','M3','M4','M5','M6'];let o='';
+ for(let i=0;i<4;i++)o+=`<line class="gl" x1="20" x2="290" y1="${20+i*35}" y2="${20+i*35}"/>`;
+ v.forEach((n,i)=>{const x=34+i*44,h=n*1.25;o+=`<rect class="bar" x="${x}" y="${145-h}" width="26" height="${h}" rx="5"/><text class="ax" x="${x+13}" y="160">${l[i]}</text>`});
+ $('#bc').innerHTML=o})();
+
+/* ---- reveal ---- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
 $$('.rv').forEach(r=>io.observe(r));
-const nav=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)$$('#links a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
-$$('section').forEach(s=>nav.observe(s));
-addEventListener('scroll',()=>{const h=document.documentElement;$('#bar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
-/* experience toggle */
-$$('.job').forEach(j=>{const t=()=>{const o=j.classList.toggle('open');j.querySelector('button').textContent=o?'Show less':'Show more'};j.querySelector('button').onclick=t;j.querySelector('header').onclick=t});
-/* skill filter */
-$$('.chips button').forEach(b=>b.onclick=()=>{$$('.chips button').forEach(x=>x.classList.toggle('on',x===b));$$('#sk span').forEach(s=>s.classList.toggle('off',b.dataset.f!=='all'&&s.dataset.c!==b.dataset.f))});
+const nv=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)$$('#links a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+$$('section').forEach(s=>nv.observe(s));
+
+/* ---- toast, email and CV buttons ---- */
+const EMAIL='dancanmyoyo2001@gmail.com';
+let tt;function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),3500)}
+function copyEmail(){const ok=()=>toast('Email copied: '+EMAIL),no=()=>toast('Please copy it manually: '+EMAIL);
+ if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(EMAIL).then(ok,no);
+ else{try{const i=document.createElement('input');i.value=EMAIL;document.body.appendChild(i);i.select();document.execCommand('copy');i.remove();ok()}catch(e){no()}}}
+$('#copy').onclick=copyEmail;
+$('#mail').onclick=e=>{if(matchMedia('(pointer:coarse)').matches)return;
+ e.preventDefault();copyEmail();
+ window.open('https://mail.google.com/mail/?view=cm&fs=1&to='+EMAIL+'&su='+encodeURIComponent('Hello Dancan'),'_blank','noopener')};
+let cvOK=null;
+if(location.protocol.startsWith('http'))fetch('Dancan-Myoyo-CV.pdf',{method:'HEAD'}).then(r=>cvOK=r.ok).catch(()=>cvOK=false);
+$$('a[href="Dancan-Myoyo-CV.pdf"]').forEach(a=>a.addEventListener('click',e=>{if(cvOK===false){e.preventDefault();toast('CV is not available right now. Please email me or message me on LinkedIn.')}}));
 </script>
 </body>
 </html>
